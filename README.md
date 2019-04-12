@@ -1,34 +1,47 @@
-# testrail-api
+# api-testrail
 
-
+[![npm version](https://badge.fury.io/js/api-testrail.svg)](https://badge.fury.io/js/api-testrail)
 ### An API wrapper for TestRail with error handling
 
 > The TestRail API is described [here](http://docs.gurock.com/testrail-api2/start)
 
 ## Usage
 
-> import TestRailAPI from '@stepanchaparyan/testrailapi'
+Of cource, you need to setup the API wrapper :
 
-> const testrail = new TestRailApi(host, username, password)
+```javascript
+import ApiTestRail from 'api-testrail';
 
-###### STATUS_ID
-* Passed - 1
-* Blocked - 2
-* Untested - 3
-* Retested - 4
-* Failed - 5
-###### TYPE_ID
-* automated = 3
+const apitestrail = new ApiTestRail(
+  host, 
+  username,
+  password
+);
+```
 
 ## Cases
+#### Below see the list of cases
 
-* testrail.getCase(caseId) // Returns an existing test case
->
-* testrail.getAllCases(projectId)	// Returns a list of test cases for a project
+> Returns an existing test case
+
+```javascript
+testrail.getCase (caseId) {
+    return /*testCase Data*/;
+}
+```
+
+> Returns a list of test cases for a project
+
+```javascript
+testrail.getAllCases(projectId) {
+    return /*All testCases Data*/;
+}
+```
+
 >
 * testrail.getCasesIDsByType (projectId, typeId) // Returns a list of test cases for a roject and case type
 >	
-*	testrail.getTests (runId) // Return all tests for a test run
+* testrail.getTests (runId) // Return all tests for a test run
 >
 * testrail.getResultsForRun (runId) // Returns a list of test results for a test run (except untested tests)
 >
@@ -43,3 +56,12 @@
 * testrail.addResultForCase (runId, caseId, status_id, comment = '') // Adds a new test result or comment for a case
 > 
 * testrail.getUsers () // Returns a list of users
+
+###### STATUS_ID
+* Passed - 1
+* Blocked - 2
+* Untested - 3
+* Retested - 4
+* Failed - 5
+###### TYPE_ID
+* automated = 3
