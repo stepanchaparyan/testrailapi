@@ -35,7 +35,7 @@ testrail.getAllCases(projectId) {
     return /*All testCases Data*/;
 }
 ```
-> Returns a list of test cases ISs for a project and case type
+> Returns a list of test cases IDs for a project and case type
 ```javascript
 testrail.getCasesIDsByType (projectId, typeId) {
     return /*list of IDs*/;
