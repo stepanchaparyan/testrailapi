@@ -1,6 +1,6 @@
 {
 	"name": "api-testrail",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -9,6 +9,10 @@
 	"keywords": [ "testrail", "testrailapi" ],
 	"author": "stepanchaparyan",
 	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/stepanchaparyan/testrailapi.git"
+	  },
 	"dependencies": {
 		"base-64": "^0.1.0",
 		"jsonpath": "^1.0.1",
