@@ -57,7 +57,7 @@ module.exports = class TestRailAPIs {
 		return await data;
 	}
 
-	// Returns a list of test cases for a project and case type
+	// Returns a list of test cases IDs for a project and case type
 	async getCasesIDsByType (projectId, typeId) {
 		const method = 'get_cases/';
 		const suiteId = '&suite_id=1&type_id=';

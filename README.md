@@ -23,7 +23,6 @@ const apitestrail = new ApiTestRail(
 #### Below see the list of cases
 
 > Returns an existing test case
-
 ```javascript
 testrail.getCase (caseId) {
     return /*testCase Data*/;
@@ -31,37 +30,93 @@ testrail.getCase (caseId) {
 ```
 
 > Returns a list of test cases for a project
-
 ```javascript
 testrail.getAllCases(projectId) {
     return /*All testCases Data*/;
 }
 ```
+> Returns a list of test cases ISs for a project and case type
+```javascript
+testrail.getCasesIDsByType (projectId, typeId) {
+    return /*list of IDs*/;
+}
+```
+> Return all tests for a test run
+```javascript
+testrail.getTests (runId) {
+    return /*tests data*/;
+}
+```
 
->
-* testrail.getCasesIDsByType (projectId, typeId) // Returns a list of test cases for a roject and case type
->	
-* testrail.getTests (runId) // Return all tests for a test run
->
-* testrail.getResultsForRun (runId) // Returns a list of test results for a test run (except untested tests)
->
-* testrail.getResultForCase (runId, caseId) // Returns a status of case
->
-* testrail.addRun (projectId, suiteId = 1) // Creates a new test run and returns run ID
-> 
-* testrail.addRunWithType (project_id, type_id, suite_id = 1) // Creates a new test run for specific case type and returns run ID
-> 
-* testrail.addResult (testId, statusId, comment = '') // Adds a new test result or comment for a test
->
-* testrail.addResultForCase (runId, caseId, status_id, comment = '') // Adds a new test result or comment for a case
-> 
-* testrail.getUsers () // Returns a list of users
+> Returns a list of test results for a test run (except untested tests)
+```javascript
+testrail.getResultsForRun (runId) {
+    return /*tests data*/;
+}
+```
 
-###### STATUS_ID
-* Passed - 1
-* Blocked - 2
-* Untested - 3
-* Retested - 4
-* Failed - 5
-###### TYPE_ID
-* automated = 3
+> Returns a status of case
+```javascript
+testrail.getResultForCase (runId, caseId) {
+    return /*statusId of case*/;
+}
+```
+
+> Creates a new test run and returns run ID
+```javascript
+testrail.addRun (projectId, suiteId = 1) {
+    return /*runId*/;
+}
+```
+
+> Creates a new test run for specific case type and returns run ID
+```javascript
+testrail.addRunWithType (project_id, type_id, suite_id = 1) {
+    return /*runId*/;
+}
+```
+
+> Adds a new test result and comment for a test
+```javascript
+testrail.addResult (testId, statusId, comment = '') {
+    return /*test data*/;
+}
+```
+
+> Adds a new test result and comment for a case
+```javascript
+testrail.addResultForCase (runId, caseId, status_id, comment = '') {
+    return /*case data*/;
+}
+```
+
+> Returns a list of users
+```javascript
+testrail.getUsers () {
+    return /*users data*/;
+}
+```
+
+# FYI
+#### STATUS_IDs
+```javascript
+Passed - 1
+Blocked - 2
+Untested - 3
+Retested - 4
+Failed - 5
+```
+#### TYPE_IDs
+```javascript
+Acceptance - 1
+Accessibility - 2
+Automated - 3
+Compatibility - 4
+Destructive - 5
+Functional - 6
+Other (Default) - 7
+Performance - 8
+Regression - 9
+Security - 10
+Smoke & Sanity - 11
+Usability - 12
