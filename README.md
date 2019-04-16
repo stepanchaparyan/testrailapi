@@ -1,6 +1,7 @@
 # api-testrail
 
 [![npm version](https://badge.fury.io/js/api-testrail.svg)](https://badge.fury.io/js/api-testrail)
+[![Build Status](https://travis-ci.org/stepanchaparyan/testrailapi.svg?branch=master)](https://travis-ci.org/stepanchaparyan/testrailapi)
 ### An API wrapper for TestRail with error handling
 
 > The TestRail API is described [here](http://docs.gurock.com/testrail-api2/start)
