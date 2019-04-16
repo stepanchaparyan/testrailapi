@@ -5,9 +5,9 @@ const path = require('path');
 
 module.exports = class TestRailAPIs {
 	constructor (host, username, password) {
-		this.host = `https://${host}.testrail.io//index.php?/api/v2/`,
-		this.username = username,
-		this.password = password,
+		this.host = `https://${host}.testrail.io//index.php?/api/v2/`;
+		this.username = username;
+		this.password = password;
 		this.headers = {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ module.exports = class TestRailAPIs {
 	//Returns a status of case
 	async getResultForCase (runId, caseId) {
 		const method = 'get_results_for_case/';
-		const pathname = path.join(`${method}`, `${runId}`, `/`, `${caseId}`);
+		const pathname = path.join(`${method}`, `${runId}/`, `${caseId}`);
 		const url = this.host + pathname;
 		const options = {
 			method: 'GET',
@@ -160,6 +160,9 @@ module.exports = class TestRailAPIs {
 				break;
 			case 11:
 				month = 'Dec';
+				break;
+			default:
+				month = 'month';
 		}
 		const year = date.getFullYear();
 		const hour = date.getHours();
@@ -233,7 +236,7 @@ module.exports = class TestRailAPIs {
 	// Adds a new test result or comment for a case
 	async addResultForCase (runId, caseId, status_id, comment = '') {
 		const method = 'add_result_for_case/';
-		const pathname = path.join(`${method}`, `${runId}`, `/`, `${caseId}`);
+		const pathname = path.join(`${method}`, `${runId}/`, `${caseId}`);
 		const url = this.host + pathname;
 		const body = {
 			status_id: status_id,
