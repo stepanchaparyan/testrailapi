@@ -7,7 +7,7 @@
 		"test": "nyc mocha --require babel-core/register tests/* ",
 		"lint": "./node_modules/.bin/eslint index.js",
 		"travis": "mocha ./node_modules/.bin/_mocha",
-		"coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+		"coveralls": "nyc istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
 	},
 	"keywords": [
 		"testrail",
@@ -29,6 +29,8 @@
 		"eslint": "^5.16.0",
 		"eslint-plugin-mocha": "^5.3.0",
 		"istanbul": "^0.4.5",
+		"js-yaml": "^3.13.1",
+		"jscover": "^1.0.0",
 		"jsonpath": "^1.0.1",
 		"mocha": "^6.1.3",
 		"mocha-lcov-reporter": "^1.3.0",
