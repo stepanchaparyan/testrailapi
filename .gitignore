@@ -1,4 +1,5 @@
 /node_modules
+.nyc*
 package-lock.json
 testRailSettings.js
 .git
