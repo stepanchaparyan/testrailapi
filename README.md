@@ -125,4 +125,4 @@ Smoke & Sanity - 11
 Usability - 12
 
 ## License
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi?ref=badge_large)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi?ref=badge_large) [![Greenkeeper badge](https://badges.greenkeeper.io/stepanchaparyan/testrailapi.svg)](https://greenkeeper.io/)
