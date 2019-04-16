@@ -6,7 +6,8 @@
 	"scripts": {
 		"test": "nyc mocha --require babel-core/register tests/* ",
 		"lint": "./node_modules/.bin/eslint index.js",
-		"travis": "mocha ./node_modules/.bin/_mocha"
+		"travis": "mocha ./node_modules/.bin/_mocha",
+		"coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
 	},
 	"keywords": [
 		"testrail",
