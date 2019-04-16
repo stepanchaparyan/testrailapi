@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "mocha --require babel-core/register tests/* ",
-		"lint": "./node_modules/.bin/eslint index.js"
+		"lint": "./node_modules/.bin/eslint index.js",
+		"travis": "mocha ./node_modules/.bin/_mocha"
+
 	},
 	"keywords": [
 		"testrail",
