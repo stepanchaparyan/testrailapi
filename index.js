@@ -31,8 +31,9 @@ module.exports = class TestRailAPIs {
 			} else {
 				throw Error(response.statusText);
 			}
+		} else {
+			return response;
 		}
-		return response;
 	}
 
 	// Returns an existing test case
@@ -120,8 +121,9 @@ module.exports = class TestRailAPIs {
 		const data = await this.myFetch(url, options, 'Provided run ID or case ID is not valid');
 		if (data.length === 0) {
 			return undefined;
+		} else {
+			return await data[0].status_id;
 		}
-		return await data[0].status_id;
 	}
 
 	// Returns run name with time
