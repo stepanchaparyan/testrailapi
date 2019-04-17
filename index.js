@@ -4,14 +4,12 @@ const jsonpath = require('jsonpath');
 const path = require('path');
 
 module.exports = class TestRailAPIs {
-	constructor (host, username, password) {
-		this.host = `https://${host}.testrail.io//index.php?/api/v2/`;
-		this.username = username;
-		this.password = password;
+	constructor (host, username, password) {	
+	this.host = `https://${host}.testrail.io//index.php?/api/v2/`;
 		this.headers = {
 			Accept: 'application/json',
 			'Content-Type': 'application/json',
-			Authorization: 'Basic ' + base64.encode(this.username + ':' + this.password)
+			Authorization: 'Basic ' + base64.encode(username + ':' + password)
 		};
 	}
 
@@ -24,7 +22,15 @@ module.exports = class TestRailAPIs {
 
 	handleErrors (response, message) {
 		if (!response.ok) {
-			throw Error(message);
+			if (response.statusText === 'Not Found') {
+				throw Error('Provided host name is wrong');
+			} else if (response.statusText === 'Unauthorized') {
+				throw Error('Provided login or password is wrong');
+			} else if (response.statusText === 'Bad Request') {
+				throw Error(message);
+			} else {
+				throw Error(response.statusText);
+			}
 		}
 		return response;
 	}
