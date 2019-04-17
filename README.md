@@ -3,10 +3,10 @@
 [![npm version](https://badge.fury.io/js/api-testrail.svg)](https://badge.fury.io/js/api-testrail)
 [![Build Status](https://travis-ci.org/stepanchaparyan/testrailapi.svg?branch=master)](https://travis-ci.org/stepanchaparyan/testrailapi)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi?ref=badge_shield)
-[![Known Vulnerabilities](https://snyk.io/test/npm/api-testrail/badge.svg)](https://snyk.io/test/npm/api-testrail)
 ![David](https://img.shields.io/david/stepanchaparyan/testrailapi.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/stepanchaparyan/testrailapi.svg)
 ![npm](https://img.shields.io/npm/dw/api-testrail.svg)
+[![Known Vulnerabilities](https://snyk.io/test/npm/api-testrail/badge.svg)](https://snyk.io/test/npm/api-testrail)
 [![Coverage Status](https://coveralls.io/repos/github/stepanchaparyan/testrailapi/badge.svg?branch=master)](https://coveralls.io/github/stepanchaparyan/testrailapi?branch=master)
 ### An API wrapper for TestRail with error handling
 
