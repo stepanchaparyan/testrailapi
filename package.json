@@ -7,7 +7,7 @@
 		"test": "nyc mocha --require babel-core/register tests/* ",
 		"lint": "./node_modules/.bin/eslint index.js",
 		"travis": "mocha ./node_modules/.bin/_mocha",
-		"coveralls": "nyc istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+		"coverage": "nyc report --reporter=text-lcov | coveralls "
 	},
 	"keywords": [
 		"testrail",
