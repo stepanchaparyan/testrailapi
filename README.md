@@ -7,6 +7,7 @@
 ![David](https://img.shields.io/david/stepanchaparyan/testrailapi.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/stepanchaparyan/testrailapi.svg)
 ![npm](https://img.shields.io/npm/dw/api-testrail.svg)
+[![Coverage Status](https://coveralls.io/repos/github/stepanchaparyan/testrailapi/badge.svg?branch=master)](https://coveralls.io/github/stepanchaparyan/testrailapi?branch=master)
 ### An API wrapper for TestRail with error handling
 
 > The TestRail API is described [here](http://docs.gurock.com/testrail-api2/start)

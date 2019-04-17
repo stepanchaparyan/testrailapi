@@ -4,9 +4,9 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "nyc mocha --require babel-core/register tests/* ",
+		"test": "mocha --require babel-core/register tests/* ",
 		"lint": "./node_modules/.bin/eslint index.js",
-		"travis": "mocha ./node_modules/.bin/_mocha",
+		"nyc": "nyc mocha --require babel-core/register tests/* ",
 		"coverage": "nyc report --reporter=text-lcov | coveralls "
 	},
 	"keywords": [

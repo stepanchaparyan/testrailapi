@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "node"
 
-script: npm test   
+script: npm run nyc   
 
 after_success: 'npm run coverage'
 
