@@ -1,13 +1,18 @@
 # api-testrail
 
 [![npm version](https://badge.fury.io/js/api-testrail.svg)](https://badge.fury.io/js/api-testrail)
+![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/stepanchaparyan/testrailapi/master.svg)
 [![Build Status](https://travis-ci.org/stepanchaparyan/testrailapi.svg?branch=master)](https://travis-ci.org/stepanchaparyan/testrailapi)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fstepanchaparyan%2Ftestrailapi?ref=badge_shield)
 ![David](https://img.shields.io/david/stepanchaparyan/testrailapi.svg)
 ![GitHub repo size](https://img.shields.io/github/repo-size/stepanchaparyan/testrailapi.svg)
 ![npm](https://img.shields.io/npm/dw/api-testrail.svg)
 [![Known Vulnerabilities](https://snyk.io/test/npm/api-testrail/badge.svg)](https://snyk.io/test/npm/api-testrail)
-[![Coverage Status](https://coveralls.io/repos/github/stepanchaparyan/testrailapi/badge.svg?branch=master)](https://coveralls.io/github/stepanchaparyan/testrailapi?branch=master)
+![GitHub last commit](https://img.shields.io/github/last-commit/stepanchaparyan/testrailapi.svg)
+![GitHub pull request check state](https://img.shields.io/github/status/s/pulls/stepanchaparyan/testrailapi/2.svg)
+![GitHub pull request check contexts](https://img.shields.io/github/status/contexts/pulls/stepanchaparyan/testrailapi/2.svg)
+![GitHub language count](https://img.shields.io/github/languages/count/stepanchaparyan/testrailapi.svg)
+![GitHub top language](https://img.shields.io/github/languages/top/stepanchaparyan/testrailapi.svg)
 ### An API wrapper for TestRail with error handling
 
 > The TestRail API is described [here](http://docs.gurock.com/testrail-api2/start)
