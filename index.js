@@ -134,7 +134,6 @@ module.exports = class TestRailAPIs {
 		getDay < 10 ? (day = `0${getDay}`) : (day = getDay);
 		const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		month = months[new Date().getMonth()];
-		
 		const year = date.getFullYear();
 		const hour = date.getHours();
 		let getMinute = date.getMinutes();

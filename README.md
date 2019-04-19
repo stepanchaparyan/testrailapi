@@ -13,6 +13,7 @@
 ![GitHub pull request check contexts](https://img.shields.io/github/status/contexts/pulls/stepanchaparyan/testrailapi/2.svg)
 ![GitHub language count](https://img.shields.io/github/languages/count/stepanchaparyan/testrailapi.svg)
 ![GitHub top language](https://img.shields.io/github/languages/top/stepanchaparyan/testrailapi.svg)
+[![Coverage Status](https://coveralls.io/repos/github/stepanchaparyan/testrailapi/badge.svg?branch=master)](https://coveralls.io/github/stepanchaparyan/testrailapi?branch=master)
 ### An API wrapper for TestRail with error handling
 
 > The TestRail API is described [here](http://docs.gurock.com/testrail-api2/start)
