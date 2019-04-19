@@ -4,7 +4,7 @@ const jsonpath = require('jsonpath');
 const path = require('path');
 
 module.exports = class TestRailAPIs {
-	constructor (host, username, password) {	
+	constructor (host, username, password) {
 	this.host = `https://${host}.testrail.io//index.php?/api/v2/`;
 		this.headers = {
 			Accept: 'application/json',
@@ -130,8 +130,8 @@ module.exports = class TestRailAPIs {
 	async getRunName () {
 		const date = new Date();
 		let month, day, minute;
-		const getDay = date.getDate();
-		getDay < 10 ? (day = `0${getDay}`) : (day = getDay);
+		const days = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12','13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
+		day = days[date.getDate()];
 		const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 		month = months[new Date().getMonth()];
 		const year = date.getFullYear();

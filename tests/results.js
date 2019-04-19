@@ -9,14 +9,22 @@ let testData = testExample;
 
 describe('Get nock data - results', function () {
     testRailApi = new TestRailAPI('stepan', 'username', 'password');
-
+    
     nock('https://stepan.testrail.io')
     .get(uri + 'get_results_for_run/1')
     .reply(200, [ ] );
 
     nock('https://stepan.testrail.io')
+    .get(uri + 'get_results_for_run/0')
+    .reply(200, { } );
+
+    nock('https://stepan.testrail.io')
     .get(uri + 'get_results_for_case/1/2')
     .reply(200, testData);
+
+    nock('https://stepan.testrail.io')
+    .get(uri + 'get_results_for_case/1/20')
+    .reply(200, [ ] );
 
     nock('https://stepan.testrail.io')
     .post(uri + 'add_result/1')
@@ -30,8 +38,14 @@ describe('Get nock data - results', function () {
 	it('getResultsForRun', async () => {
         expect(await testRailApi.getResultsForRun(1)).to.be.an('array');
     });
+	it('getResultsForRun', async () => {
+        expect(await testRailApi.getResultsForRun(0)).to.be.an('object');
+    });
 	it('getResultForCase', async () => {
         expect(await testRailApi.getResultForCase(1,2)).to.be.an('number');
+    });
+    it('getResultForCase', async () => {
+        expect(await testRailApi.getResultForCase(1,20)).to.be.an('undefined');
     });
 	it('addResult', async () => {
         expect(await testRailApi.addResult(1,1)).to.be.an('array');
