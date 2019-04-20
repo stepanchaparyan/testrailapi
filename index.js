@@ -129,15 +129,14 @@ module.exports = class TestRailAPIs {
 	// Returns run name with time
 	async getRunName () {
 		const date = new Date();
-		let month, day, minute;
 		const days = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12','13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'];
-		day = days[date.getDate()];
+		let day = days[date.getDate()];
 		const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-		month = months[new Date().getMonth()];
+		let month = months[new Date().getMonth()];
 		const year = date.getFullYear();
 		const hour = date.getHours();
-		let getMinute = date.getMinutes();
-		getMinute < 10 ? (minute = `0${getMinute}`) : (minute = getMinute);
+		const minutes = ['00','01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12','13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36', '37', '38', '39', '40', '41', '42','43', '44', '45', '46', '47', '48', '49', '50', '51', '52', '53', '54', '55', '56', '57', '58', '59'];
+		let minute = minutes[date.getMinutes()];
 		const fullTime = month + ' ' + day + ' ' + year + ', ' + hour + ':' + minute;
 		const runName = `Automated test run - ${fullTime}`;
 		return await runName;
