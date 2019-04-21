@@ -22,11 +22,7 @@ module.exports = class TestRailAPIs {
 
 	handleErrors (response, message) {
 		if (!response.ok) {
-			if (response.statusText === 'Not Found') {
-				throw Error('Provided host name is wrong');
-			} else if (response.statusText === 'Unauthorized') {
-				throw Error('Provided login or password is wrong');
-			} else if (response.statusText === 'Bad Request') {
+			if (response.statusText === 'Bad Request') {
 				throw Error(message);
 			} else {
 				throw Error(response.statusText);
