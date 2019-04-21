@@ -15,6 +15,14 @@ describe('Get nock data - cases', function () {
     .get(uri + 'get_case/1')
     .reply(200, testData);
 
+    nock('https://stepanerror.testrail.io')
+    .get(uri + 'get_case/2')
+    .replyWithError();
+
+    nock('https://stepan.testrail.io')
+    .get(uri + 'get_case/9999')
+    .reply(400);
+
     nock('https://stepan.testrail.io')
     .get(uri + 'get_cases/1')
     .reply(200, [ {id:1, title: 'Test1'} ]);
@@ -27,6 +35,12 @@ describe('Get nock data - cases', function () {
 
 	it('getCase', async () => {
         expect(await testRailApi.getCase(1)).to.deep.equal(testData);
+    });
+    it('getCaseWithError', async () => {
+        expect(await testRailApi.getCaseWithError(2)).to.equal(undefined);
+    });
+    it('getCaseWithBadRequest', async () => {
+        expect(await testRailApi.getCaseWithBadRequest(9999)).to.equal(400);
     });
     it('getCases', async () => {
         expect(await testRailApi.getAllCases(1)).to.be.an('array');

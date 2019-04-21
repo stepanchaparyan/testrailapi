@@ -46,6 +46,33 @@ module.exports = class TestRailAPIs {
 		return await data;
 	}
 
+	// Negative case with wrong host
+	async getCaseWithError (caseId) {
+		const method = 'get_case/';
+		const pathname = path.join(`${method}`, `${caseId}`);
+		const url = 'https://stepanerror.testrail.io//index.php?/api/v2/' + pathname;
+		const options = {
+			method: 'GET',
+			headers: this.headers
+		};
+
+		await fetch(url, options);
+	}
+
+	// Negative case with bad request
+	async getCaseWithBadRequest (caseId) {
+		const method = 'get_case/';
+		const pathname = path.join(`${method}`, `${caseId}`);
+		const url = this.host + pathname;
+		const options = {
+			method: 'GET',
+			headers: this.headers
+		};
+
+		let data = await fetch(url, options);
+		return await data.status;
+	}
+
 	// Returns a list of test cases for a project
 	async getAllCases (projectId) {
 		const method = 'get_cases/';
