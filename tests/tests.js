@@ -11,10 +11,10 @@ describe('Get nock data - tests', function () {
     testRailApi = new TestRailAPI('stepan', 'username', 'password');
 
     nock('https://stepan.testrail.io')
-    .get(uri + 'get_tests/1')
+    .get(uri + 'get_tests/1&status_id=1')
     .reply(200, testData);
 
 	it('getTests', async () => {
-        expect(await testRailApi.getTests(1)).to.deep.equal(testData);
+        expect(await testRailApi.getTests(1,1)).to.deep.equal(testData);
     });
 });
