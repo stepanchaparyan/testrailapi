@@ -30,7 +30,7 @@ describe('Get nock data - cases', function () {
     .reply(200, [ {id:1, title: 'Test1'} ]);
 
     nock('https://stepan.testrail.io')
-    .get(uri + 'get_cases/1/&suite_id=1&type_id=3')
+    .get(uri + 'get_cases/1&suite_id=1&type_id=3')
     .reply(200, [ 1,2,3 ]);
 
     nock('https://stepan.testrail.io')
@@ -63,7 +63,7 @@ describe('Get nock data - cases', function () {
         expect(await testRailApi.getCaseWithBadRequest(9999)).to.equal(400);
     });
     it('getCases', async () => {
-        expect(await testRailApi.getAllCases(1)).to.be.an('array');
+        expect(await testRailApi.getCases(1)).to.be.an('array');
     });
     it('getCasesIDsByType', async () => {
         expect(await testRailApi.getCasesIDsByType(1,3)).to.be.an('array');

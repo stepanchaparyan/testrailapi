@@ -19,10 +19,10 @@ describe('Get nock data - runs', function () {
     .reply(200, runData);
 
     nock('https://stepan.testrail.io')
-    .get(uri + 'get_cases/1/&suite_id=1&type_id=3')
+    .get(uri + 'get_cases/1&suite_id=1&type_id=3')
     .reply(200, [ 1,2,3 ]);
 
-    nock('https://stepan.testrail.io')
+     nock('https://stepan.testrail.io')
     .post(uri + 'update_run/1')
     .reply(200, runData);
 
@@ -35,7 +35,7 @@ describe('Get nock data - runs', function () {
     .reply(200, runData);
 
     it('addRun', async () => {
-        expect(await testRailApi.addRun(1)).to.be.an('number');
+        expect(await testRailApi.addRun(1)).to.deep.equal(runData);
     });
     it('addRunWithType', async () => {
         expect(await testRailApi.addRunWithType(1,3)).to.be.an('number');

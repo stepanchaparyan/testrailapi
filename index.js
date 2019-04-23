@@ -436,7 +436,7 @@ module.exports = class TestRailAPIs {
 	}
 	// Deletes an existing configuration
 	async deleteConfig (configID) {
-		const method = 'delete_config_group/';
+		const method = 'delete_config/';
 		const url = this.host + method + configID;
 		const options = {
 			method: 'POST',

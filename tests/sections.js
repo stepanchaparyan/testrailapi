@@ -15,7 +15,7 @@ describe('Get nock data - sections', function () {
     .reply(200, testData);
 
     nock('https://stepan.testrail.io')
-    .get(uri + 'get_sections/1/&suite_id=1')
+    .get(uri + 'get_sections/1&suite_id=1')
     .reply(200, testData);
 
     nock('https://stepan.testrail.io')
