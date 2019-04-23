@@ -464,7 +464,7 @@ module.exports = class TestRailAPIs {
 	}
 	// Deletes an existing configuration
 	async deleteConfig (configID) {
-		const method = 'delete_config_group/';
+		const method = 'delete_config/';
 		const pathname = path.join(`${method}`, `${configID}`);
 		const url = this.host + pathname;
 		const options = {
@@ -732,7 +732,7 @@ module.exports = class TestRailAPIs {
 		};
 
 		const data = await this.myFetch(url, options, 'Provided data is not valid');
-		return await data.id;
+		return await data;
 	}
 	// Closes an existing test run and archives its tests & results.
 	async closeRun (runID) {
