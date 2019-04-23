@@ -11,6 +11,14 @@ describe('Get nock data - runs', function () {
     testRailApi = new TestRailAPI('stepan', 'username', 'password');
 
     nock('https://stepan.testrail.io')
+    .get(uri + 'get_run/1')
+    .reply(200, runData);
+
+    nock('https://stepan.testrail.io')
+    .get(uri + 'get_runs/1&is_completed=&limit=&milestone_id=&suite_id=')
+    .reply(200, runData);
+
+    nock('https://stepan.testrail.io')
     .post(uri + 'add_run/1')
     .reply(200, runData);
 
@@ -34,6 +42,12 @@ describe('Get nock data - runs', function () {
     .post(uri + 'delete_run/1')
     .reply(200, runData);
 
+    it('getRun', async () => {
+        expect(await testRailApi.getRun(1)).to.deep.equal(runData);
+    });
+    it('getRuns', async () => {
+        expect(await testRailApi.getRuns(1)).to.deep.equal(runData);
+    });
     it('addRun', async () => {
         expect(await testRailApi.addRun(1)).to.deep.equal(runData);
     });
