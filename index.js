@@ -168,7 +168,7 @@ module.exports = class TestRailAPIs {
 		return await data;
 	}
 
-	// Returns a list of available configurations, grouped by configuration groups
+	// Returns an existing milestone.
 	async getMilestone (milestoneID) {
 		const method = 'get_milestone/';
 		const url = this.host + method + milestoneID;
@@ -666,7 +666,7 @@ module.exports = class TestRailAPIs {
 		const runName = `Automated test run - ${fullTime}`;
 		return await runName;
 	}
-	// Creates a new test run and returns run ID
+	// Creates a new test run
 	async addRun (projectID, suiteID = 1) {
 		const method = 'add_run/';
 		const url = this.host + method + projectID;
@@ -704,7 +704,7 @@ module.exports = class TestRailAPIs {
 		return await data.id;
 	}
 	// Updates an existing test run (partial updates are supported: runName and description)
-	async updateRun (runID, name, description ) {
+	async updateRun (runID, name, description) {
 		const method = 'update_run/';
 		const url = this.host + method + runID;
 		const body = {
