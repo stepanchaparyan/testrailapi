@@ -27,7 +27,7 @@ Of cource, you need to setup the API wrapper :
 ```javascript
 import ApiTestRail from 'api-testrail';
 
-const apitestrail = new ApiTestRail(
+const testrail = new ApiTestRail(
   host, 
   username,
   password
