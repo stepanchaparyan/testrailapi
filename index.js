@@ -283,14 +283,16 @@ module.exports = class TestRailAPIs {
 		return await data;
 	}
 	// Adds one or more new test runs to a test plan
-	// The following POST fields are supported - planID(required), suiteID(required), name
-	async addPlanEntry (planID, suiteID, runName) {
+	// The following POST fields are supported - planID(required), suiteID(required), name, configIds, runs
+	async addPlanEntry (planID, suiteID, runName, configIds, runs) {
 		const method = 'add_plan_entry/';
 		const url = this.host + method + planID;
 		const body = {
 			'plan_id': planID,
 			'suite_id': suiteID,
-			'name': runName
+			'name': runName,
+			'config_ids': configIds,
+			'runs': runs
 		};
 		const options = {
 			method: 'POST',
