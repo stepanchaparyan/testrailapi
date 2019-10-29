@@ -60,13 +60,15 @@ describe('Get nock data - cases', function () {
         expect(await testRailApi.getCaseWithError(2)).to.equal(undefined);
     });
     it('getCaseWithBadRequest', async () => {
-        expect(await testRailApi.getCaseWithBadRequest(9999)).to.equal(400);
+        const res = await testRailApi.getCaseWithBadRequest(9999);
+        expect(res).to.equal(400);
     });
     it('getCases', async () => {
         expect(await testRailApi.getCases(1)).to.be.an('array');
     });
     it('getCasesIDsByType', async () => {
-        expect(await testRailApi.getCasesIDsByType(1,3)).to.be.an('array');
+        const res = await testRailApi.getCasesIDsByType(1,3);
+        expect(res).to.be.an('array');
     });
     it('addCase', async () => {
         expect(await testRailApi.addCase(1)).to.deep.equal(testData);
@@ -75,7 +77,8 @@ describe('Get nock data - cases', function () {
         expect(await testRailApi.updateCase(1)).to.deep.equal(testData);
     });
     it('deleteCase', async () => {
-        expect(await testRailApi.deleteCase(1)).to.equal(200);
+        const res = await testRailApi.deleteCase(1);
+        expect(res).to.equal(200);
     });
 
     it('getCaseFields', async () => {
