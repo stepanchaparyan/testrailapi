@@ -523,6 +523,44 @@ testrail.getUserByEmail (email) {
 }
 ```
 
+### Attachments
+
+> Adds attachment to a result based on the result ID. The maximum allowable upload size is set to 256mb.
+```js
+testrail.addAttachmentToResult (resultId, filePath) {
+    return /*reponse with attachment id in the body*/;
+}
+```
+
+> Returns a list of attachments for a test case.
+```js
+testrail.getAttachmentsForCase (caseID) {
+    return /*a list of attachments for a test case*/;
+}
+```
+
+> Returns a list of attachments for a test results.
+```js
+testrail.getAttachmentsForTest (testID) {
+    return /*a list of attachments for a test results*/;
+}
+```
+
+> Returns the requested attachment identified by :attachmentID.
+```js
+testrail.getAttachment (attachmentID) {
+    return /*the attachment is returned in the body of the response*/;
+}
+```
+
+> Deletes the specified attachment identified by :attachmentID.
+```js
+testrail.deleteAttachment (attachmentID) {
+    return /*the status code*/;
+}
+```
+
+
 # FYI
 #### STATUS_IDs
 ```javascript

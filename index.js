@@ -1167,11 +1167,11 @@ module.exports = class TestRailAPIs {
 	}
 
 	// Adds attachment to a result based on the result ID. The maximum allowable upload size is set to 256mb.
-	async addAttachmentToResult(resultId, imageFile) {
+	async addAttachmentToResult(resultId, filePath) {
 		const FormData = require('form-data');
 		const fs = require('fs');
 		let form = new FormData();
-		form.append('attachment', fs.createReadStream(imageFile));
+		form.append('attachment', fs.createReadStream(filePath));
 
 		const res = axios({
 			method: 'post',

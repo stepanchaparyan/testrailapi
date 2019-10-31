@@ -23,8 +23,8 @@ describe('Get nock data - attachments', () => {
 	testRailApi = new TestRailAPI('stepan', 'username', 'password');
 
     nock('https://stepan.testrail.io')
-    .post(uri + 'add_attachment_to_result/1')
-	.reply(200);
+    .post(uri + 'add_attachment_to_result/10')
+	.reply(200, {"attachment_id": 443});
 
 	nock('https://stepan.testrail.io')
 	.get(uri + 'get_attachments_for_case/1')
@@ -43,8 +43,8 @@ describe('Get nock data - attachments', () => {
 	.reply(200);
 
 	it('addAttachmentToResult', async () => {
-		const res = await testRailApi.addAttachmentToResult(1, 'tests/fixtures/airplane.png');
-		expect(res.status).to.equal(200);
+		const res = await testRailApi.addAttachmentToResult(10, 'tests/fixtures/airplane.png');
+		expect(res.data.attachment_id).to.equal(443);
 	});
 
 	it('getAttachmentsForCase', async () => {
