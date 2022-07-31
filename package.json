@@ -22,7 +22,7 @@
 	"dependencies": {
 		"base-64": "^0.1.0",
 		"jsonpath": "^1.0.1",
-		"node-fetch": "^2.3.0"
+		"node-fetch": "^3.2.10"
 	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
